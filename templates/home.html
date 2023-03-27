@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="eventScroll">
+        {% for post in posts %}
+            <a href ="#Post">
+            <h1>{{ post.title }}</h1>
+            <p>{{ post.date }}</p>
+            <p>{{ post.content }}</p>
+            </a>
+        {% endfor %}
+    </div> 
+    <form action = "/home" METHOD = "POST">
+        <input type = "text" placeholder="Name" name = 'name'>
+        <input type = "text" placeholder="Content" name ='content'>
+        <input type = "submit" value = "Add Post" class = "btn btn-secondary">
+    </form>
+{% endblock content %}
